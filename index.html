@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=Noto+Serif+TC:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyozUCiR5aOQ+8=" crossorigin="">
+
   <style>
 :root{--paper:#f7f4ec;--ink:#172c29;--green:#12493e;--mustard:#e4b84e;--rust:#a6503c;--olive:#777d5d;--line:#bcb9ab;--light:#e8e7da;--sans:'Noto Sans TC',sans-serif;--serif:'Noto Serif TC',serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;background-image:radial-gradient(rgba(96,76,48,.055) .6px,transparent .6px);background-size:6px 6px}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #c57837;outline-offset:3px}.page{width:min(1320px,calc(100% - 90px));margin:auto}.masthead{display:flex;justify-content:space-between;align-items:center;letter-spacing:.18em;font-size:10px;font-weight:800;border-bottom:1px solid var(--ink);padding:20px 0 13px}.masthead-mark{color:var(--rust);font-size:19px;margin-left:9px}.hero{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(270px,.72fr);align-items:center;min-height:330px;padding:28px 24px 38px 14px;border-bottom:1px solid var(--ink);gap:25px}.hero-copy{position:relative}.eyebrow{font-family:'DM Serif Display',var(--serif);font-size:12px;letter-spacing:.12em;font-style:italic;text-transform:uppercase;margin:0 0 4px;color:var(--olive)}.hero h1{font-family:var(--serif);font-size:clamp(70px,9.5vw,138px);font-weight:900;line-height:1.35;letter-spacing:-.1em;margin:0;color:var(--green);white-space:nowrap}.hero .question{color:var(--rust)}.swoosh{height:12px;width:42%;background:var(--mustard);transform:skew(-25deg) rotate(-2deg);margin:-8px 0 22px 40px;clip-path:polygon(0 25%,100% 0,94% 68%,1% 100%)}.hero-line{font-size:clamp(17px,2.1vw,24px);font-family:var(--serif);font-weight:800;margin:0 0 7px}.hero-description{margin:0;font-size:14px;line-height:1.9}.hero-art{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;min-height:215px;color:var(--green)}.hero-art svg{width:min(100%,320px);opacity:.86}.art-small{position:absolute;right:4%;top:2%;font:italic 18px/1.12 'DM Serif Display',serif;transform:rotate(9deg);color:var(--rust);letter-spacing:.04em}.art-caption{font:italic 11px 'DM Serif Display',serif;letter-spacing:.16em;position:absolute;bottom:4%;left:3%;color:var(--olive)}.section{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;border-bottom:1px solid var(--ink);padding:32px 0 36px}.section-number{font:italic 52px/1 'DM Serif Display',serif;color:var(--olive)}.section-heading{display:flex;align-items:baseline;gap:22px;margin:0 0 20px}.section-heading h2{font-family:var(--serif);font-size:clamp(25px,3vw,36px);line-height:1.3;margin:0;letter-spacing:.03em;font-weight:900}.section-heading p{margin:0;color:#5d655b;font-size:13px}.location-layout{display:grid;grid-template-columns:1.5fr .75fr;gap:32px}.location-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:19px}.button{border:1px solid var(--green);padding:11px 19px;font-weight:700;border-radius:3px;background:transparent;color:var(--green);transition:transform .15s,background .15s}.button:hover,.primary-cta:hover{transform:translateY(-2px)}.button-green,.button-ink{background:var(--green);color:#fff}.button-ink{background:var(--ink);border-color:var(--ink)}.address-form{max-width:610px}.small-label{font-size:12px;font-weight:700;color:#596259;display:block;margin-bottom:7px}.inline-input{display:flex;gap:8px}.inline-input input{min-width:0;flex:1;border:1px solid #a7ab9c;background:rgba(255,255,255,.55);border-radius:3px;padding:10px 12px;color:var(--ink)}.radius-group{display:flex;align-items:center;gap:14px;margin:16px 0 8px}.radius-group .small-label{margin:0;white-space:nowrap}.status-line{font-size:12px;color:#7b644a;margin:10px 0 0}.location-art{min-height:178px;background:#d7dfce;position:relative;overflow:hidden;border-radius:3px}.location-art svg{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}.location-art-label{position:absolute;bottom:12px;right:12px;z-index:1;letter-spacing:.17em;font-size:9px;color:#3b6150;font-weight:800}.preference-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 42px}.fieldset{border:0;padding:0;margin:0;min-width:0}.fieldset legend{font-family:var(--serif);font-size:16px;font-weight:800;margin-bottom:12px;padding:0}.fieldset legend span{font-family:var(--sans);font-size:11px;color:#717569;font-weight:400;margin-left:8px}.choice-row{display:flex;flex-wrap:wrap;gap:8px}.choice{border:1px solid #b6b6a9;color:var(--ink);background:transparent;padding:8px 13px;border-radius:3px;font-size:13px;line-height:1.3;white-space:nowrap;transition:background .15s,border-color .15s}.choice:hover{border-color:var(--green);background:#ebece2}.choice.selected{background:var(--mustard);border-color:var(--mustard);color:#1a2925;font-weight:800}.choice.compact{padding:6px 10px}.budget-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}.micro-note{color:#7e796f;font-size:11px;line-height:1.7;margin:11px 0 0;max-width:600px}.time-input{border:1px solid #a7ab9c;padding:8px;background:transparent;color:var(--ink);margin:5px 0}.hidden{display:none!important}.cta-wrap{display:flex;align-items:center;gap:23px;padding:26px 0 7px}.cta-line{height:1px;background:var(--line);flex:1}.primary-cta{border:0;background:var(--green);color:#fff;font-family:var(--serif);font-size:24px;font-weight:800;letter-spacing:.15em;padding:13px 46px;transform:skew(-8deg);box-shadow:7px 7px 0 rgba(228,184,78,.45);transition:transform .15s}.primary-cta:hover{transform:skew(-8deg) translateY(-3px)}.primary-cta span{font-family:var(--sans);font-size:26px;margin-left:12px}.app-message{text-align:center;font-size:12px;color:#7a756c;margin:9px 0 2px}.results-section{margin-top:12px}.result-panel{display:grid;grid-template-columns:minmax(220px,.95fr) minmax(260px,1.1fr);gap:30px;align-items:stretch}.result-panel.empty{background:rgba(233,232,221,.5);padding:25px;align-items:center}.empty-illustration{display:flex;justify-content:center}.empty-illustration img{width:100%;max-height:230px}.empty-message h3{font-family:var(--serif);font-size:25px;margin:6px 0}.empty-message p{font-size:13px;color:#63695f}.result-visual{background:#e3e7db;min-height:295px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.result-visual img{width:100%;height:100%;max-height:350px;object-fit:cover}.result-visual .visual-caption{position:absolute;bottom:9px;left:11px;background:rgba(247,244,236,.93);font-size:10px;padding:3px 8px;color:#465c52}.result-content{display:flex;flex-direction:column;gap:12px}.result-kicker{font:italic 12px 'DM Serif Display',serif;color:var(--olive);letter-spacing:.13em}.result-name{font-family:var(--serif);font-size:clamp(26px,3.5vw,41px);line-height:1.3;margin:0}.result-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;font-size:12px;color:#555e53}.result-note{border-left:3px solid var(--mustard);padding:8px 0 8px 14px;background:rgba(228,184,78,.085)}.result-note strong{font-size:13px;color:var(--rust)}.result-note p{font-size:13px;margin:3px 0 0}.result-details{font-size:12px;color:#666d62;margin:0}.result-tags{border-top:1px solid var(--line);padding-top:12px}.result-tags h4{font-size:13px;margin:0 0 9px}.tag-row{display:flex;flex-wrap:wrap;gap:7px}.tag{border:1px solid #aeb4a4;padding:3px 10px;font-size:11px;border-radius:20px;background:#e7eadf}.result-actions{display:flex;gap:9px;margin-top:auto;padding-top:10px;flex-wrap:wrap}.result-actions .button{flex:1;padding:12px 11px;font-size:13px}.result-disclaimer{font-size:11px;color:#777466;margin:0}.footer{display:flex;justify-content:space-between;gap:20px;align-items:end;padding:26px 0 35px;font-size:10px;letter-spacing:.06em}.footer>div:first-child>span{font:italic 13px 'DM Serif Display',serif;color:var(--green);letter-spacing:.13em}.footer p{margin:8px 0 0;color:#7a796d}.footer>div:last-child{display:flex;align-items:center;gap:10px}.footer a{color:var(--ink)}.map-dialog{border:1px solid var(--green);padding:24px;width:min(640px,calc(100% - 28px));max-height:92vh;background:var(--paper);color:var(--ink);box-shadow:0 14px 65px #14292050}.map-dialog::backdrop{background:rgba(14,27,24,.64)}.map-dialog-header{display:flex;justify-content:space-between;align-items:start}.map-dialog-header h2{margin:0;font-family:var(--serif)}.close-map{font-size:29px;background:none;border:0;color:var(--ink);line-height:1}.map-tip{font-size:13px;margin:12px 0}.map-container{height:min(50vh,370px);position:relative}.map-container #map{height:100%;width:100%}.center-pin{position:absolute;z-index:500;left:50%;top:50%;transform:translate(-50%,-100%);font-size:30px;line-height:1;color:var(--rust);text-shadow:0 1px 2px white;pointer-events:none}.center-pin span{display:block;width:2px;height:15px;background:var(--rust);margin:-3px auto 0}.map-dialog-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px}.coordinate-text{font-size:12px;color:#63695f}.leaflet-control-attribution{font-size:11px!important}.leaflet-container{font-family:var(--sans)}@media(max-width:820px){.page{width:min(100% - 36px,700px)}.hero{grid-template-columns:1fr minmax(150px,.4fr);min-height:280px;padding:25px 0}.hero h1{font-size:clamp(55px,10vw,96px)}.section{grid-template-columns:54px minmax(0,1fr)}.section-number{font-size:39px}.section-heading{flex-direction:column;gap:2px}.preference-grid,.budget-layout{grid-template-columns:1fr}.location-layout{grid-template-columns:1fr}.location-art{min-height:125px}.hero-art svg{opacity:.56}}@media(max-width:560px){.page{width:calc(100% - 30px)}.masthead{font-size:9px;padding:14px 0}.hero{position:relative;display:block;min-height:285px;padding:23px 0 34px}.hero h1{font-size:clamp(59px,15vw,92px);position:relative;z-index:2}.hero-art{position:absolute;right:0;top:10px;width:45%;height:180px;min-height:0;opacity:.24}.art-small,.art-caption{display:none}.hero-line{position:relative;z-index:2}.hero-description{font-size:13px;position:relative;z-index:2}.section{grid-template-columns:43px minmax(0,1fr);gap:6px;padding:26px 0}.section-number{font-size:31px}.section-heading h2{font-size:24px}.section-heading p{font-size:12px}.location-buttons .button{flex:1;padding:10px 9px;font-size:12px}.radius-group{align-items:flex-start;flex-direction:column;gap:7px}.choice{padding:8px 11px;font-size:12px}.preference-grid{gap:20px}.cta-wrap{gap:11px;padding-top:25px}.primary-cta{font-size:19px;padding:13px 24px;white-space:nowrap}.result-panel{grid-template-columns:1fr;gap:14px}.result-visual{min-height:210px;max-height:250px}.result-visual img{max-height:250px}.footer{flex-direction:column;align-items:start}.map-dialog{padding:14px}.map-dialog-actions{flex-direction:column;align-items:stretch}.map-dialog-actions .button{width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
@@ -62,245 +62,14 @@ html,body{max-width:100%;overflow-x:clip}
  .masthead>span:last-child{white-space:nowrap}
 }
 
+.test-settings{border:1px solid var(--line);padding:14px;margin:20px 0;font-size:12px}.test-settings summary{cursor:pointer;font-weight:700}.test-settings p{margin:8px 0}.test-settings input{font-size:14px}.map-crosshair{display:none}.result-visual img{object-fit:contain;height:auto}.result-details{overflow-wrap:anywhere}#inline-map{display:flex;align-items:center;justify-content:center}.location-map-footer span{max-width:100%} .result-actions a{text-align:center;text-decoration:none}
 </style>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-  <script defer>
-/* 你吃啥？ Free / static GitHub Pages prototype.
-   Data: © OpenStreetMap contributors (ODbL). Uses public Overpass and Nominatim on a best-effort basis.
-   No Google Places API, no review scraping, no invented photos, ratings or prices. */
-'use strict';
-const $ = (s) => document.querySelector(s);
-const state = {
-  point: null, radius: 1000, mood: null, flavor: [], cuisine: [], meal: [], budget: 'all', time: 'now',
-  fetched: [], remaining: [], seen: new Set(), busy: false, lastGeocode: 0, map: null, lastQueryKey: '', lastQueryAt: 0
-};
-const msg = (s) => { $('#app-message').textContent = s; };
-const locMsg = (s) => { $('#location-status').textContent = s; };
-const escapeHTML = (text) => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function setPoint(lat, lon, label) {
-  state.point = {lat:Number(lat),lon:Number(lon),label};
-  locMsg(`已選擇：${label}（${state.point.lat.toFixed(4)}, ${state.point.lon.toFixed(4)}）`);
-  state.lastQueryKey = '';
-  state.remaining = [];
-  if(state.inlineMap){state.inlineMap.setView([state.point.lat,state.point.lon],16);}
-  if(state.map){state.map.setView([state.point.lat,state.point.lon],16);}
-  const st=$('#map-preview-status');if(st)st.textContent=label;
-  $('#result-subtitle').textContent = '位置已更新，按下按鈕尋找附近餐廳';
-}
-function wireChoices(){
-  document.querySelectorAll('[data-select]').forEach(group => {
-    const key=group.dataset.select, multi=group.dataset.multiple==='true';
-    group.querySelectorAll('button').forEach(button=>{
-      button.setAttribute('aria-pressed',button.classList.contains('selected')?'true':'false');
-      button.addEventListener('click',()=>{
-        const value=button.dataset.value;
-        if(multi){
-          button.classList.toggle('selected');
-          state[key]=[...group.querySelectorAll('.choice.selected')].map(b=>b.dataset.value);
-        }else{
-          const toggleOff=key==='mood'&&button.classList.contains('selected');
-          group.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
-          if(!toggleOff)button.classList.add('selected');
-          state[key]=toggleOff?null:value;
-        }
-        group.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.classList.contains('selected')?'true':'false'));
-        if(key==='time'){
-          const later=state.time==='later';
-          $('#meal-time').classList.toggle('hidden',!later);
-          $('#meal-time-label').classList.toggle('hidden',!later);
-          if(later&&!$('#meal-time').value){const d=new Date(Date.now()+3600000);d.setMinutes(0);$('#meal-time').value=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')+'T'+String(d.getHours()).padStart(2,'0')+':00';}
-        }
-      });
-    });
-  });
-  document.querySelectorAll('[data-radius]').forEach(b=>{
-    b.setAttribute('aria-pressed',b.classList.contains('selected')?'true':'false');
-    b.addEventListener('click',()=>{
-      document.querySelectorAll('[data-radius]').forEach(x=>{x.classList.remove('selected');x.setAttribute('aria-pressed','false');});
-      b.classList.add('selected');b.setAttribute('aria-pressed','true');state.radius=Number(b.dataset.radius);state.lastQueryKey='';
-    });
-  });
-}
-$('#locate-btn').addEventListener('click',()=>{
-  if(!navigator.geolocation){locMsg('你的瀏覽器不支援定位，請改用手動輸入或地圖選點');return;}
-  locMsg('正在取得位置，請確認瀏覽器的定位權限');
-  navigator.geolocation.getCurrentPosition(pos=>setPoint(pos.coords.latitude,pos.coords.longitude,'目前位置'),()=>locMsg('無法取得位置，請開啟定位權限，或改用地圖選點／手動輸入'),{enableHighAccuracy:false,timeout:14000,maximumAge:60000});
-});
-$('#address-form').addEventListener('submit',async e=>{
-  e.preventDefault(); const q=$('#address').value.trim();if(q.length<2){locMsg('請輸入至少兩個字的地址或地標');return;}
-  const match=q.match(/^(-?\d{1,2}\.\d+)\s*[,， ]\s*(-?\d{1,3}\.\d+)$/);
-  if(match){const lat=Number(match[1]),lon=Number(match[2]);if(Math.abs(lat)<=90&&Math.abs(lon)<=180){setPoint(lat,lon,'手動輸入座標');return;}}
-  const time=Date.now(); if(time-state.lastGeocode<1200){locMsg('搜尋太頻繁，請稍後再試');return;}state.lastGeocode=time;
-  const button=$('#address-form button[type=submit]');button.disabled=true;locMsg('正在查詢地點');
-  try{
-    const queries=[q,/台|臺|北|新北|桃園|台中|臺中|高雄|台南|臺南/.test(q)?q+', Taiwan':q+', 台灣'];
-    let data=[],lastError='';
-    for(const term of [...new Set(queries)]){
-      try{
-        const url='https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&countrycodes=tw&accept-language=zh-TW&q='+encodeURIComponent(term);
-        const response=await fetch(url,{headers:{Accept:'application/json'}});
-        if(!response.ok){lastError='HTTP '+response.status;continue;}
-        data=await response.json();if(data.length)break;
-      }catch(e){lastError=String(e);}
-    }
-    // No repeated automatic keystroke calls; fallback is only after form submit.
-    if(!data.length){
-      try{const alt=await fetch('https://photon.komoot.io/api/?limit=3&lang=en&q='+encodeURIComponent(q));if(alt.ok){const a=await alt.json();const first=a.features?.[0];if(first){const [lon,lat]=first.geometry.coordinates;setPoint(lat,lon,first.properties?.name||q);return;}}}catch(e){}
-      locMsg('找不到這個地點或免費搜尋服務無回應，請使用下方地圖選點，或輸入經緯度');return;
-    }
-    setPoint(data[0].lat,data[0].lon,data[0].display_name.split(',').slice(0,2).join('、'));
-  }catch(err){locMsg('地址服務暫時不可用，請直接拖曳地圖選點，或輸入經緯度');}finally{button.disabled=false;}
-});
-function initInlineMap(){
-  const spot=$('#inline-map');if(!spot)return;
-  if(!window.L){$('#map-fallback').classList.remove('hidden');$('#map-preview-status').textContent='地圖元件無法載入';return;}
-  try{
-    const origin=state.point||{lat:25.033,lon:121.5654};
-    state.inlineMap=L.map(spot,{zoomControl:true,scrollWheelZoom:false}).setView([origin.lat,origin.lon],15);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>'}).addTo(state.inlineMap);
-    state.inlineMap.on('moveend',()=>{const p=state.inlineMap.getCenter();$('#map-preview-status').textContent=`圖釘：${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}`;});
-    setTimeout(()=>state.inlineMap.invalidateSize(),150);
-  }catch(e){$('#map-fallback').classList.remove('hidden');}
-}
-$('#inline-select-btn').addEventListener('click',()=>{
-  if(!state.inlineMap){locMsg('地圖沒有成功載入，請改用定位或輸入座標');return;}
-  const p=state.inlineMap.getCenter();setPoint(p.lat,p.lng,'地圖圖釘位置');
-});
-window.addEventListener('load',initInlineMap,{once:true});
-$('#map-btn').addEventListener('click',()=>{
-  if(!window.L){locMsg('地圖元件尚未載入，請確認網路連線後重試');return;}
-  const dlg=$('#map-dialog');dlg.showModal();
-  const origin=state.point||{lat:25.033,lon:121.5654};
-  if(!state.map){
-    state.map=L.map('map',{scrollWheelZoom:false}).setView([origin.lat,origin.lon],15);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>'}).addTo(state.map);
-    state.map.on('moveend',()=>{const p=state.map.getCenter();$('#map-coordinates').textContent=p.lat.toFixed(5)+', '+p.lng.toFixed(5);});
-  }else state.map.setView([origin.lat,origin.lon],15);
-  setTimeout(()=>{state.map.invalidateSize();state.map.fire('moveend');},60);
-});
-$('#close-map').addEventListener('click',()=>$('#map-dialog').close());
-$('#map-dialog').addEventListener('click',e=>{if(e.target===$('#map-dialog'))$('#map-dialog').close();});
-$('#confirm-map').addEventListener('click',()=>{const p=state.map.getCenter();setPoint(p.lat,p.lng,'地圖選取位置');$('#map-dialog').close();});
-const cuisineGroups={
-  chinese:['chinese','taiwanese','regional','asian','dumpling','beef_noodle','hot_pot'],japanese:['japanese','sushi','ramen','udon'],korean:['korean'],thai:['thai'],italian:['italian','pizza','pasta'],american:['american','burger','steak','sandwich'],vietnamese:['vietnamese','pho'],indian:['indian']
-};
-const mealWords={rice:['rice','bento','donburi','curry','fried_rice'],noodle:['noodle','ramen','udon','soba','pasta','pho'],soup:['soup','hot_pot','stew','shabu'],snack:['snack','street_food','dumpling','bao','fast_food']};
-const moodWords={comfort:['soup','noodle','ramen','hot_pot','cafe'],feast:['bbq','steak','hot_pot','restaurant','buffet'],adventure:['thai','indian','korean','mexican','vietnamese'],easy:['fast_food','sandwich','noodle','bento','cafe']};
-const flavorWords={strong:['bbq','hot_pot','curry','beef_noodle'],light:['salad','vegetarian','vegan','soup','japanese'],spicy:['spicy','thai','sichuan','korean','indian'],sour:['thai','vietnamese','pho','sour']};
-function haystack(x){return [x.tags.cuisine,x.tags.name,x.tags['name:en'],x.tags.description,x.tags.amenity,x.tags.shop].filter(Boolean).join(' ').toLowerCase().replaceAll(/[,;｜、]/g,' ');}
-function containsAny(h,words){return words.some(word=>h.includes(word.replaceAll('_','_'))||h.includes(word.replaceAll('_',' ')));}
-function preferenceScore(x){
-  const h=haystack(x);let score=0;
-  if(state.cuisine.length){const words=state.cuisine.flatMap(s=>cuisineGroups[s]||[]);if(!containsAny(h,words))return -1;score+=5;}
-  if(state.meal.length){const words=state.meal.flatMap(s=>mealWords[s]||[]);if(!containsAny(h,words))return -1;score+=3;}
-  if(state.mood&&containsAny(h,moodWords[state.mood]||[]))score+=2;
-  for(const f of state.flavor)if(containsAny(h,flavorWords[f]||[]))score+=1;
-  return score;
-}
-function haversine(lat1,lon1,lat2,lon2){const r=6371000,deg=Math.PI/180,dlat=(lat2-lat1)*deg,dlon=(lon2-lon1)*deg,a=Math.sin(dlat/2)**2+Math.cos(lat1*deg)*Math.cos(lat2*deg)*Math.sin(dlon/2)**2;return 2*r*Math.asin(Math.min(1,Math.sqrt(a)));}
-function mealDate(){if(state.time==='later'&&$('#meal-time').value){const d=new Date($('#meal-time').value);if(Number.isFinite(d.getTime()))return d;}return new Date();}
-/* Only claim open/closed where the uncomplicated weekly OSM syntax can be interpreted reliably.
-   Everything else is explicitly UNKNOWN; no optimistic assumption. */
-const wd=['Su','Mo','Tu','We','Th','Fr','Sa'];
-function openingStatus(raw,date){
-  if(!raw)return 'unknown';
-  const str=String(raw).trim();if(str==='24/7')return 'open';
-  if(/PH|SH|sunrise|sunset|week|\[|\]|\+|off|closed|\/|"|\{/i.test(str))return 'unknown';
-  let any=false,open=false;
-  for(const clause of str.split(';')){
-    const m=clause.trim().match(/^(?:(Mo|Tu|We|Th|Fr|Sa|Su)(?:-(Mo|Tu|We|Th|Fr|Sa|Su))?(?:,(Mo|Tu|We|Th|Fr|Sa|Su))?\s+)?(\d\d:\d\d-\d\d:\d\d(?:,\d\d:\d\d-\d\d:\d\d)*)$/);
-    if(!m)return 'unknown';any=true;
-    let days=[];if(!m[1])days=[0,1,2,3,4,5,6];else{
-      const a=wd.indexOf(m[1]),b=m[2]?wd.indexOf(m[2]):a;
-      let n=a;days=[n];while(n!==b){n=(n+1)%7;days.push(n);if(days.length>7)return 'unknown';}
-      if(m[3])days.push(wd.indexOf(m[3]));
-    }
-    for(const range of m[4].split(',')){
-      const [start,end]=range.split('-').map(v=>Number(v.slice(0,2))*60+Number(v.slice(3)));
-      const mins=date.getHours()*60+date.getMinutes(),day=date.getDay();
-      if(days.includes(day)&&end>start&&mins>=start&&mins<end)open=true;
-      if(end<start&&((days.includes(day)&&mins>=start)||(days.includes((day+6)%7)&&mins<end)))open=true;
-    }
-  }
-  return any?(open?'open':'closed'):'unknown';
-}
-function fromOverpass(el){const tags=el.tags||{},lat=el.lat??el.center?.lat,lon=el.lon??el.center?.lon;return {id:`${el.type}/${el.id}`,tags,lat,lon,name:tags['name:zh']||tags.name||tags['name:en']||'',distance:haversine(state.point.lat,state.point.lon,lat,lon)};}
-async function fetchRestaurants(){
-  const {lat,lon}=state.point,r=state.radius;
-  const q=`[out:json][timeout:23];(nwr["amenity"~"^(restaurant|fast_food|food_court|cafe)$"](around:${r},${lat},${lon}););out center 120;`;
-  const endpoints=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter','https://overpass.nchc.org.tw/api/interpreter'];
-  let lastErr;
-  for(const endpoint of endpoints){try{
-    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),26000);
-    let response;try{response=await fetch(endpoint,{method:'POST',body:new URLSearchParams({data:q}),signal:controller.signal});}finally{clearTimeout(timer);}
-    if(!response.ok)throw new Error('HTTP '+response.status);
-    const data=await response.json();if(!Array.isArray(data.elements))throw new Error('invalid data');
-    return data.elements.filter(x=>(x.tags?.name||x.tags?.['name:zh']||x.tags?.['name:en'])&&(x.lat??x.center?.lat)!==undefined).map(fromOverpass).filter(x=>Number.isFinite(x.distance)&&x.distance<=r);
-  }catch(e){lastErr=e;}}
-  throw lastErr||new Error('沒有回應');
-}
-function filtered(){
-  const date=mealDate();
-  return state.fetched.map(x=>({...x,opening:openingStatus(x.tags.opening_hours,date),score:preferenceScore(x)})).filter(x=>x.score>=0&&x.opening!=='closed');
-}
-function drawEmpty(title,detail){
-  $('#result-panel').className='result-panel empty';
-  $('#result-panel').innerHTML=`<div class="empty-illustration"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIj48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ0MCIgZmlsbD0iI2U1ZThkYiIvPjxwYXRoIGQ9Ik0wIDM3MGg2NDAiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTE1MCAxNDJoMzM4djIzMEgxNTB6IiBmaWxsPSIjZjRmMGU0IiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iOCIvPjxwYXRoIGQ9Ik0xMzYgMTQ1aDM2NmwtMTgtNjBIMTU3eiIgZmlsbD0iI2UyYjc1YiIgc3Ryb2tlPSIjMTUzZjM4IiBzdHJva2Utd2lkdGg9IjgiLz48cGF0aCBkPSJNMTM2IDE0NWMwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0MiAyMiA0MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iNyIvPjxwYXRoIGQ9Ik0yMDAgMjEyaDExNXYxNjBIMjAwek0zNTAgMjEyaDkxdjkyaC05MXoiIGZpbGw9IiNkN2RkY2QiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI3Ii8+PHBhdGggZD0iTTI1MCAyMTJ2MTYwTTM1MCAyNTloOTEiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMjk2IiBjeT0iMjk1IiByPSI1IiBmaWxsPSIjMTUzZjM4Ii8+PHJlY3QgeD0iMjI3IiB5PSI1MyIgd2lkdGg9IjE5MiIgaGVpZ2h0PSI0MSIgcng9IjYiIGZpbGw9IiMxNTNmMzgiLz48cGF0aCBkPSJNNjUgMzY1VjIwNW0wIDU1Yy0zOS0zMy00MC02Ny0xOS04M20xOSA1M2M0Ny0yMyA2MC01OCAzNi05M002NSAzMDhjMzEtMjAgNTMtMjMgNjUtMTUiIHN0cm9rZT0iIzgwOWI3ZSIgc3Ryb2tlLXdpZHRoPSI4IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNTQ0IDM2NlYyMzltMCA0OGMtMTktMjctMjAtNTQtNi03MW02IDMzYzE5LTE3IDI1LTQwIDE1LTU5IiBzdHJva2U9IiM4MDliN2UiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg4IDQwNWg0NzUiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4K" alt="手繪餐廳店面插畫"></div><div class="empty-message"><span class="eyebrow">YOUR NEXT MEAL</span><h3>${escapeHTML(title)}</h3><p>${escapeHTML(detail)}</p></div>`;
-}
-function pickOne(){
-  let candidates=filtered().filter(x=>!state.seen.has(x.id));
-  if(!candidates.length){const any=filtered();if(!any.length){drawEmpty('這附近暫時沒有符合條件的店家','可以放寬料理／餐點類型，或調整搜尋範圍再試試');msg('目前沒有可推薦的店家');return;}
-    state.seen.clear();candidates=any;msg('符合條件的店家已經看過一輪，重新開始推薦');
-  }
-  const weights=candidates.map(x=>Math.max(.25,3+x.score-x.distance/state.radius*1.7));const total=weights.reduce((a,b)=>a+b,0);let roll=Math.random()*total,idx=0;
-  for(let i=0;i<weights.length;i++){roll-=weights[i];if(roll<=0){idx=i;break;}}
-  const pick=candidates[idx];state.seen.add(pick.id);renderPlace(pick);
-}
-function classify(t){const v=(t.cuisine||'').split(/[;,]/).filter(Boolean).slice(0,3);const labels={chinese:'中式',taiwanese:'台式',japanese:'日式',korean:'韓式',thai:'泰式',italian:'義式',american:'美式',vietnamese:'越式',indian:'印度',pizza:'披薩',burger:'漢堡',ramen:'拉麵',noodle:'麵食',vegetarian:'蔬食',hot_pot:'鍋物',sushi:'壽司'};return v.map(x=>labels[x.trim()]||x.trim()).filter(Boolean);}
-function makeAddress(t){return [t['addr:city'],t['addr:district'],t['addr:street'],t['addr:housenumber']].filter(Boolean).join('')||'未提供完整地址';}
-function mapSearchUrl(x){const label=x.name+' '+makeAddress(x.tags);return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(label+' '+x.lat+','+x.lon);}
-function mapDirUrl(x){return 'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(x.lat+','+x.lon)+'&travelmode=walking';}
-function renderPlace(x){
-  $('#result-subtitle').textContent='依你選的條件，在附近找到的一間店';
-  const kind=classify(x.tags),meters=Math.round(x.distance),dist=meters<1000?`${meters} 公尺`:`${(meters/1000).toFixed(1)} 公里`;
-  const status=x.opening==='open'?'營業中（依登錄時間推算）':'營業時間未知';
-  const reason=[];if(kind.length)reason.push(`店家標註為${kind.join('／')}料理`);reason.push(`距離搜尋位置約 ${dist}`);if(state.mood)reason.push('已參考你的心情偏好進行排序');
-  const notes=[];if(!x.tags.opening_hours)notes.push('沒有完整營業時間');if(state.budget!=='all')notes.push('預算未經確認');notes.push('店家與營業資訊以實際狀況為準');
-  const tags=[...kind];if(x.tags.takeaway==='yes')tags.push('提供外帶');if(x.tags.outdoor_seating==='yes')tags.push('有戶外座位');if(x.tags.wheelchair==='yes')tags.push('無障礙入口（店家標註）');
-  $('#result-panel').className='result-panel';
-  $('#result-panel').innerHTML=`<div class="result-visual"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIj48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ0MCIgZmlsbD0iI2U1ZThkYiIvPjxwYXRoIGQ9Ik0wIDM3MGg2NDAiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTE1MCAxNDJoMzM4djIzMEgxNTB6IiBmaWxsPSIjZjRmMGU0IiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iOCIvPjxwYXRoIGQ9Ik0xMzYgMTQ1aDM2NmwtMTgtNjBIMTU3eiIgZmlsbD0iI2UyYjc1YiIgc3Ryb2tlPSIjMTUzZjM4IiBzdHJva2Utd2lkdGg9IjgiLz48cGF0aCBkPSJNMTM2IDE0NWMwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0MiAyMiA0MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iNyIvPjxwYXRoIGQ9Ik0yMDAgMjEyaDExNXYxNjBIMjAwek0zNTAgMjEyaDkxdjkyaC05MXoiIGZpbGw9IiNkN2RkY2QiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI3Ii8+PHBhdGggZD0iTTI1MCAyMTJ2MTYwTTM1MCAyNTloOTEiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMjk2IiBjeT0iMjk1IiByPSI1IiBmaWxsPSIjMTUzZjM4Ii8+PHJlY3QgeD0iMjI3IiB5PSI1MyIgd2lkdGg9IjE5MiIgaGVpZ2h0PSI0MSIgcng9IjYiIGZpbGw9IiMxNTNmMzgiLz48cGF0aCBkPSJNNjUgMzY1VjIwNW0wIDU1Yy0zOS0zMy00MC02Ny0xOS04M20xOSA1M2M0Ny0yMyA2MC01OCAzNi05M002NSAzMDhjMzEtMjAgNTMtMjMgNjUtMTUiIHN0cm9rZT0iIzgwOWI3ZSIgc3Ryb2tlLXdpZHRoPSI4IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNTQ0IDM2NlYyMzltMCA0OGMtMTktMjctMjAtNTQtNi03MW02IDMzYzE5LTE3IDI1LTQwIDE1LTU5IiBzdHJva2U9IiM4MDliN2UiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg4IDQwNWg0NzUiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4K" alt="通用店面插畫，非實際店家照片"><span class="visual-caption">分類插畫・非店家實拍</span></div><div class="result-content"><span class="result-kicker">TODAY'S SUGGESTION</span><h3 class="result-name">${escapeHTML(x.name)}</h3><div class="result-meta"><span>◉ 距離 ${escapeHTML(dist)}</span><span>·</span><span>${escapeHTML(status)}</span></div><p class="result-details">${escapeHTML(makeAddress(x.tags))}</p><div class="result-note"><strong>為什麼推薦這間？</strong><p>${escapeHTML(reason.join('，'))}</p></div><div class="result-tags"><h4>這間店的已知特色</h4><div class="tag-row">${tags.length?tags.map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join(''):'<span class="tag">目前沒有足夠的分類資訊</span>'}</div></div><p class="result-disclaimer">${escapeHTML(notes.join(' · '))}<br>本網站不直接取得 Google 評分、照片或評論</p><div class="result-actions"><button type="button" id="next-btn" class="button button-outline">這間先不要，換一家 ↻</button><a class="button button-green" target="_blank" rel="noopener noreferrer" id="directions-btn" href="${escapeHTML(mapDirUrl(x))}">就吃這家！帶我去 ↗</a><a class="button button-outline" target="_blank" rel="noopener noreferrer" href="${escapeHTML(mapSearchUrl(x))}">看 Google 地圖評論 ↗</a></div></div>`;
-  $('#next-btn').addEventListener('click',pickOne);
-  $('#results').scrollIntoView({behavior:'smooth',block:'start'});
-}
-$('#recommend-btn').addEventListener('click',async()=>{
-  if(state.busy)return;if(!state.point){msg('請先取得位置、在地圖選點或輸入地址');$('#location').scrollIntoView({behavior:'smooth'});return;}
-  if(state.time==='later'&&!$('#meal-time').value){msg('請選擇預計用餐時間');return;}
-  const key=`${state.point.lat.toFixed(4)},${state.point.lon.toFixed(4)}|${state.radius}`;
-  if(state.lastQueryKey!==key||Date.now()-state.lastQueryAt>10*60*1000){
-    state.busy=true;$('#recommend-btn').disabled=true;msg('正在搜尋附近餐廳，資料由 OpenStreetMap 社群提供');
-    try{
-      state.fetched=await fetchRestaurants();state.lastQueryKey=key;state.lastQueryAt=Date.now();state.seen.clear();
-      if(!state.fetched.length){drawEmpty('附近暫時找不到足夠的餐廳資料','試試擴大搜尋範圍，或直接前往 Google Maps 查看');showFallbackSearch();msg('免費資料庫沒有找到足夠的店家');return;}
-      msg(`附近找到 ${state.fetched.length} 間有店名的餐飲地點，正在篩選`);
-    }catch(e){drawEmpty('暫時連不上免費餐廳資料','公開服務可能繁忙或限制連線，你仍可用 Google Maps 查詢附近餐廳');msg('餐廳資料未取得，請稍後重試或使用 Google Maps 搜尋');showFallbackSearch();return;}
-    finally{state.busy=false;$('#recommend-btn').disabled=false;}
-  }
-  if(state.budget!=='all')msg('已選預算，但免費資料無法確認價格；以下推薦未通過價格驗證');
-  pickOne();
-});
-function showFallbackSearch(){
-  if(!state.point)return;
-  const p=state.point;
-  const a=document.createElement('a');a.className='button button-green fallback-search';a.target='_blank';a.rel='noopener noreferrer';a.textContent='在 Google Maps 搜尋附近餐廳 ↗';a.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('餐廳 '+p.lat+','+p.lon);
-  $('#result-panel').appendChild(a);
-}
-wireChoices();
 
-</script>
+
 </head>
 <body>
   <main class="page" id="top">
-    <div class="masthead"><span>AN EVERYDAY FOOD JOURNAL</span><span>ISSUE NO. 001 <span class="masthead-mark" aria-hidden="true">✳</span></span></div>
+    <details class="test-settings" open><summary>Google 連線設定 · 測試版</summary><p>輸入已限制網站來源的金鑰，僅在本頁記憶體使用，重新整理後清除。需啟用 Maps JavaScript API、Places API (New)、Geocoding API。</p><form id="google-form"><label for="google-key">網站 API 金鑰</label><div class="inline-input"><input id="google-key" type="password" autocomplete="off" spellcheck="false" required placeholder="貼入網站用金鑰"><button class="button button-green" type="submit">連接 Google</button></div></form><p id="google-status" role="status">尚未連線。請在允許的 GitHub Pages 網址上測試。</p></details><div class="masthead"><span>AN EVERYDAY FOOD JOURNAL</span><span>ISSUE NO. 001 <span class="masthead-mark" aria-hidden="true">✳</span></span></div>
     <header class="hero" aria-labelledby="brand-title">
       <div class="hero-copy">
         <p class="eyebrow">今天，不用想太多 <span aria-hidden="true">↘</span></p>
@@ -325,9 +94,9 @@ wireChoices();
             <div class="location-buttons"><button type="button" class="button button-green" id="locate-btn">◎ 抓我位置</button><button type="button" class="button button-outline" id="map-btn">▧ 地圖選點</button></div>
             <form id="address-form" class="address-form"><label class="small-label" for="address">或是輸入地點／地標</label><div class="inline-input"><input id="address" type="search" placeholder="例如：台北車站、忠孝復興，或 25.0330,121.5654" autocomplete="street-address" required><button type="submit" class="button button-ink">搜尋</button></div></form>
             <div class="radius-group"><span class="small-label">搜尋範圍</span><div class="choice-row compact" role="group" aria-label="搜尋半徑"><button type="button" class="choice" data-radius="500">500 公尺</button><button type="button" class="choice selected" data-radius="1000" aria-pressed="true">1 公里</button><button type="button" class="choice" data-radius="2000">2 公里</button></div></div>
-            <p id="location-status" class="status-line" aria-live="polite">尚未設定位置，請先選擇搜尋地點</p>
+            <a id="location-google-link" class="button hidden" target="_blank" rel="noopener noreferrer">在 Google 地圖查看此位置 ↗</a><p id="location-status" class="status-line" aria-live="polite">尚未設定位置，請先選擇搜尋地點</p>
           </div>
-          <div class="location-map-wrap"><div class="map-visual-header"><span>LOCATION / 地圖選點</span><span id="map-preview-status">尚未設定位置・地圖中心僅供示意</span></div><div id="inline-map" role="region" aria-label="附近可拖曳地圖"></div><div class="map-crosshair" aria-hidden="true"><span></span></div><div class="location-map-footer"><span>拖曳地圖，將圖釘移到想搜尋的位置</span><button type="button" class="button button-green" id="inline-select-btn">選取圖釘位置</button></div><p class="map-fallback hidden" id="map-fallback">地圖載入失敗，可使用目前位置或輸入座標（例如 25.0330, 121.5654）</p></div>
+          <div class="location-map-wrap"><div class="map-visual-header"><span>LOCATION / 地圖選點</span><span id="map-preview-status">尚未設定位置・地圖中心僅供示意</span></div><div id="inline-map" role="region" aria-label="附近可拖曳地圖">先在上方連接 Google，即可顯示地圖</div><div class="map-crosshair" aria-hidden="true"><span></span></div><div class="location-map-footer"><span>拖曳或點擊地圖，再按「選取圖釘位置」確認</span><button type="button" class="button button-green" id="inline-select-btn">選取圖釘位置</button></div><p class="map-fallback hidden" id="map-fallback">Google 地圖未就緒，請檢查金鑰、API 啟用狀態、網站限制及計費設定</p></div>
         </div>
       </div>
     </section>
@@ -345,15 +114,119 @@ wireChoices();
       </div>
     </section>
 
-    <section class="section budget-section" aria-labelledby="budget-title"><div class="section-number">03</div><div class="section-body"><div class="section-heading"><h2 id="budget-title">今天想花多少？</h2><p>預算與用餐時間都能調整</p></div><div class="budget-layout"><fieldset class="fieldset"><legend>每人預算</legend><div class="choice-row" data-select="budget"><button type="button" class="choice selected" data-value="all" aria-pressed="true">不限</button><button type="button" class="choice" data-value="150">$150 以下</button><button type="button" class="choice" data-value="300">$150–300</button><button type="button" class="choice" data-value="500">$300–500</button><button type="button" class="choice" data-value="800">$500–800</button><button type="button" class="choice" data-value="high">$800 以上</button></div><p class="micro-note">免費地圖資料通常沒有台幣價格，指定預算時無法驗證是否符合</p></fieldset><fieldset class="fieldset"><legend>用餐時間</legend><div class="choice-row" data-select="time"><button type="button" class="choice selected" data-value="now" aria-pressed="true">現在要吃</button><button type="button" class="choice" data-value="later">晚點再吃</button></div><label class="small-label hidden" for="meal-time" id="meal-time-label">預計用餐時間</label><input class="time-input hidden" type="datetime-local" id="meal-time"><p class="micro-note">僅能依有登錄的營業時間判斷，未知店家會另外標示</p></fieldset></div></div></section>
+    <section class="section budget-section" aria-labelledby="budget-title"><div class="section-number">03</div><div class="section-body"><div class="section-heading"><h2 id="budget-title">今天想花多少？</h2><p>預算與用餐時間都能調整</p></div><div class="budget-layout"><fieldset class="fieldset"><legend>每人預算</legend><div class="choice-row" data-select="budget"><button type="button" class="choice selected" data-value="all" aria-pressed="true">不限</button><button type="button" class="choice" data-value="150">$150 以下</button><button type="button" class="choice" data-value="300">$150–300</button><button type="button" class="choice" data-value="500">$300–500</button><button type="button" class="choice" data-value="800">$500–800</button><button type="button" class="choice" data-value="high">$800 以上</button></div><p class="micro-note">此版先測試定位與附近推薦，暫不依預算篩選；價格未確認</p></fieldset><fieldset class="fieldset"><legend>用餐時間</legend><div class="choice-row" data-select="time"><button type="button" class="choice selected" data-value="now" aria-pressed="true">現在要吃</button><button type="button" class="choice" data-value="later">晚點再吃</button></div><label class="small-label hidden" for="meal-time" id="meal-time-label">預計用餐時間</label><input class="time-input hidden" type="datetime-local" id="meal-time"><p class="micro-note">此版暫不依用餐時間篩選，營業時間請到 Google 地圖確認</p></fieldset></div></div></section>
 
     <div class="cta-wrap"><div class="cta-line"></div><button type="button" id="recommend-btn" class="primary-cta">今天吃這間 <span aria-hidden="true">↗</span></button><div class="cta-line"></div></div>
     <p id="app-message" class="app-message" role="status" aria-live="polite">先設定位置，再讓我們幫你找餐廳</p>
 
     <section class="section results-section" id="results" aria-labelledby="results-title"><div class="section-number">04</div><div class="section-body"><div class="section-heading"><h2 id="results-title">今日推薦</h2><p id="result-subtitle">還沒決定，等你按下開始</p></div><div id="result-panel" class="result-panel empty"><div class="empty-illustration"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIj48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ0MCIgZmlsbD0iI2U1ZThkYiIvPjxwYXRoIGQ9Ik0wIDM3MGg2NDAiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTE1MCAxNDJoMzM4djIzMEgxNTB6IiBmaWxsPSIjZjRmMGU0IiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iOCIvPjxwYXRoIGQ9Ik0xMzYgMTQ1aDM2NmwtMTgtNjBIMTU3eiIgZmlsbD0iI2UyYjc1YiIgc3Ryb2tlPSIjMTUzZjM4IiBzdHJva2Utd2lkdGg9IjgiLz48cGF0aCBkPSJNMTM2IDE0NWMwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0MiAyMiA0MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iNyIvPjxwYXRoIGQ9Ik0yMDAgMjEyaDExNXYxNjBIMjAwek0zNTAgMjEyaDkxdjkyaC05MXoiIGZpbGw9IiNkN2RkY2QiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI3Ii8+PHBhdGggZD0iTTI1MCAyMTJ2MTYwTTM1MCAyNTloOTEiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMjk2IiBjeT0iMjk1IiByPSI1IiBmaWxsPSIjMTUzZjM4Ii8+PHJlY3QgeD0iMjI3IiB5PSI1MyIgd2lkdGg9IjE5MiIgaGVpZ2h0PSI0MSIgcng9IjYiIGZpbGw9IiMxNTNmMzgiLz48cGF0aCBkPSJNNjUgMzY1VjIwNW0wIDU1Yy0zOS0zMy00MC02Ny0xOS04M20xOSA1M2M0Ny0yMyA2MC01OCAzNi05M002NSAzMDhjMzEtMjAgNTMtMjMgNjUtMTUiIHN0cm9rZT0iIzgwOWI3ZSIgc3Ryb2tlLXdpZHRoPSI4IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNTQ0IDM2NlYyMzltMCA0OGMtMTktMjctMjAtNTQtNi03MW02IDMzYzE5LTE3IDI1LTQwIDE1LTU5IiBzdHJva2U9IiM4MDliN2UiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg4IDQwNWg0NzUiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4K" alt="手繪餐廳店面插畫"></div><div class="empty-message"><span class="eyebrow">YOUR NEXT MEAL</span><h3>先看看今天有什麼選擇</h3><p>完成位置設定後，按「今天吃這間」就能開始</p></div></div></div></section>
-    <footer class="footer"><div><span>MADE FOR THE UNDECIDED</span><p>使用 OpenStreetMap 社群資料｜不保證資料即時或完整</p></div><div><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a><span>·</span><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GITHUB PAGES</a></div></footer>
+    <footer class="footer"><div><span>MADE FOR THE UNDECIDED</span><p>Google 連線測試版｜料理、心情與口味僅供排序參考</p></div><div><a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Google Maps</a><span>·</span><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GITHUB PAGES</a></div></footer>
   </main>
 
-  <dialog id="map-dialog" class="map-dialog" aria-labelledby="map-title"><div class="map-dialog-header"><div><span class="eyebrow">PICK A SPOT</span><h2 id="map-title">地圖選點</h2></div><button type="button" class="close-map" id="close-map" aria-label="關閉地圖">×</button></div><p class="map-tip">拖曳地圖，讓圖釘對準你想搜尋的位置</p><div class="map-container"><div id="map" aria-label="可拖曳的地圖"></div><div class="center-pin" aria-hidden="true">●<span></span></div></div><div class="map-dialog-actions"><span id="map-coordinates" class="coordinate-text"></span><button type="button" class="button button-green" id="confirm-map">選這個位置 →</button></div></dialog>
+<script>
+'use strict';
+const $=s=>document.querySelector(s);
+const escapeHTML=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const state={ready:false,point:null,radius:1000,map:null,marker:null,geocoder:null,Place:null,busy:false,version:0,queryKey:'',fetched:[],seen:new Set(),mood:null,flavor:[],cuisine:[],meal:[]};
+const illustration=$('#result-panel img').getAttribute('src');
+const locMsg=t=>$('#location-status').textContent=t;
+const msg=t=>$('#app-message').textContent=t;
+const configMsg=t=>$('#google-status').textContent=t;
+const mapURL=(lat,lon)=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(lat+','+lon);
+const distance=(a,b)=>{const d=Math.PI/180,x=(b.lat-a.lat)*d,y=(b.lng-a.lng)*d,z=Math.sin(x/2)**2+Math.cos(a.lat*d)*Math.cos(b.lat*d)*Math.sin(y/2)**2;return 6371000*2*Math.asin(Math.min(1,Math.sqrt(z)));};
+function requireGoogle(){if(state.ready)return true;msg('請先在上方連接 Google 地圖');configMsg('請輸入金鑰並按「連接 Google」');$('.test-settings').open=true;return false;}
+window.gm_authFailure=()=>{state.ready=false;state.busy=false;$('#recommend-btn').disabled=false;configMsg('Google 驗證失敗：請確認網站限制、API 啟用狀態與計費帳戶。修正後重新整理。');$('#map-fallback').classList.remove('hidden');};
+function timeout(promise,ms=15000){return new Promise((resolve,reject)=>{const id=setTimeout(()=>reject(new Error('連線逾時，請稍後重試')),ms);Promise.resolve(promise).then(v=>{clearTimeout(id);resolve(v)},e=>{clearTimeout(id);reject(e)});});}
+window.initGoogleTest=async()=>{
+ try{
+  const [{Map},{Geocoder},{Place},{AdvancedMarkerElement}]=await Promise.all([google.maps.importLibrary('maps'),google.maps.importLibrary('geocoding'),google.maps.importLibrary('places'),google.maps.importLibrary('marker')]);
+  state.geocoder=new Geocoder();state.Place=Place;
+  state.map=new Map($('#inline-map'),{center:state.point||{lat:25.033,lng:121.5654},zoom:15,mapId:'DEMO_MAP_ID',mapTypeControl:false,streetViewControl:false,fullscreenControl:true,clickableIcons:false,gestureHandling:'cooperative'});
+  state.marker=new AdvancedMarkerElement({map:state.map,position:state.point||{lat:25.033,lng:121.5654},title:'搜尋位置'});
+  state.map.addListener('center_changed',()=>{const c=state.map.getCenter();state.marker.position=c;$('#map-preview-status').textContent='候選位置：'+c.lat().toFixed(5)+', '+c.lng().toFixed(5)+'（按確認套用）';});
+  state.map.addListener('click',e=>state.map.panTo(e.latLng));
+  state.ready=true;$('#google-key').value='';configMsg('Google 元件已載入，請測試地址查詢及餐廳搜尋，確認服務授權。');$('#google-form button').disabled=true;
+  if(state.point)resolveAddress(state.point);msg('Google 已連接，請先設定位置');
+ }catch(e){configMsg('Google 元件載入失敗，請檢查 API 設定並重新整理。');$('#map-fallback').classList.remove('hidden');}
+};
+$('#google-form').addEventListener('submit',e=>{
+ e.preventDefault();const key=$('#google-key').value.trim();if(!key)return;
+ if(location.protocol==='file:'){configMsg('請把此檔案上傳 GitHub Pages 後再連接；直接開啟檔案無法符合網站來源限制。');return;}
+ const button=$('#google-form button');button.disabled=true;configMsg('正在載入 Google 地圖…');
+ const script=document.createElement('script');script.async=true;script.src='https://maps.googleapis.com/maps/api/js?key='+encodeURIComponent(key)+'&loading=async&callback=initGoogleTest&v=weekly&language=zh-TW&region=TW';
+ script.onerror=()=>{script.remove();button.disabled=false;configMsg('Google 程式載入失敗，請確認網路後重試');};document.head.appendChild(script);
+});
+function setPoint(lat,lng,label,reverse=true){
+ if(!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>90||Math.abs(lng)>180){locMsg('座標無效');return;}
+ const p={lat,lng,label};state.point=p;state.version++;state.queryKey='';state.fetched=[];state.seen.clear();
+ locMsg('已設定：'+label+'（'+lat.toFixed(5)+', '+lng.toFixed(5)+'）');$('#map-preview-status').textContent=label;$('#address').value=reverse?'':label;
+ const link=$('#location-google-link');link.href=mapURL(lat,lng);link.classList.remove('hidden');
+ if(state.map){state.map.panTo(p);state.map.setZoom(16);state.marker.position=p;}
+ $('#result-subtitle').textContent='位置已更新，請重新推薦';
+ $('#result-panel').className='result-panel empty';$('#result-panel').innerHTML='<div class="empty-illustration"><img src="'+illustration+'" alt="餐廳店面插畫"></div><div class="empty-message"><h3>搜尋位置已設定</h3><p>按「今天吃這間」，尋找附近餐廳</p></div>';
+ if(reverse&&state.ready)resolveAddress(p);
+}
+async function resolveAddress(p){
+ locMsg('位置已取得，正在確認附近地址…');
+ try{const {results}=await timeout(state.geocoder.geocode({location:{lat:p.lat,lng:p.lng}}));if(state.point!==p)return;if(!results.length)throw Error('無地址');p.label=results[0].formatted_address;$('#address').value=p.label;$('#map-preview-status').textContent=p.label;locMsg('所選位置附近地址：'+p.label);}
+ catch(e){if(state.point===p)locMsg('座標已設定，但地址查詢失敗；仍可搜尋附近餐廳。請確認 Geocoding API 設定。');}
+}
+$('#locate-btn').addEventListener('click',()=>{
+ if(!requireGoogle())return;if(!navigator.geolocation){locMsg('瀏覽器不支援定位，請輸入地址或地圖選點');return;}
+ const button=$('#locate-btn');button.disabled=true;locMsg('正在定位，請允許瀏覽器使用位置');
+ navigator.geolocation.getCurrentPosition(p=>{button.disabled=false;setPoint(p.coords.latitude,p.coords.longitude,'目前位置');},e=>{button.disabled=false;locMsg(e.code===1?'定位權限未開啟，請允許位置權限，或輸入地址／地圖選點':'無法取得位置，請輸入地址或地圖選點');},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
+});
+$('#address-form').addEventListener('submit',async e=>{
+ e.preventDefault();if(!requireGoogle())return;const q=$('#address').value.trim();if(q.length<2)return;
+ const c=q.match(/^(-?\d+(?:\.\d+)?)\s*[,，]\s*(-?\d+(?:\.\d+)?)$/);if(c){setPoint(Number(c[1]),Number(c[2]),'手動座標');return;}
+ const button=$('#address-form button');button.disabled=true;const version=++state.version;locMsg('正在搜尋地址／地標…');
+ try{const {results}=await timeout(state.geocoder.geocode({address:q,region:'TW'}));if(version!==state.version)return;if(!results.length)throw Error('找不到地點');const r=results[0];setPoint(r.geometry.location.lat(),r.geometry.location.lng(),r.formatted_address,false);}
+ catch(e){if(version===state.version)locMsg('地址查詢失敗，請補上縣市、改用座標或地圖選點，並確認 Geocoding API 已啟用');}finally{button.disabled=false;}
+});
+$('#map-btn').addEventListener('click',()=>{if(requireGoogle()){$('#inline-map').scrollIntoView({behavior:'smooth',block:'center'});locMsg('拖曳或點擊地圖，再按「選取圖釘位置」');}});
+$('#inline-select-btn').addEventListener('click',()=>{if(!requireGoogle())return;const p=state.map.getCenter();setPoint(p.lat(),p.lng(),'地圖選點');});
+document.querySelectorAll('[data-radius]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-radius]').forEach(x=>{x.classList.remove('selected');x.setAttribute('aria-pressed','false');});b.classList.add('selected');b.setAttribute('aria-pressed','true');state.radius=Number(b.dataset.radius);state.queryKey='';state.version++;}));
+document.querySelectorAll('[data-select]').forEach(group=>{
+ const key=group.dataset.select;
+ group.querySelectorAll('button').forEach(b=>{
+  if(['budget','time'].includes(key)){b.disabled=true;return;}
+  b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{
+   if(group.dataset.multiple==='true'){b.classList.toggle('selected');state[key]=[...group.querySelectorAll('.selected')].map(x=>x.dataset.value);}
+   else{const off=b.classList.contains('selected');group.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));if(!off)b.classList.add('selected');state[key]=off?null:b.dataset.value;}
+   group.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.classList.contains('selected')?'true':'false'));
+  });
+ });
+});
+const words={chinese:['chinese','taiwanese','中式','台式','便當','小吃'],japanese:['japanese','sushi','ramen','日式','壽司','拉麵'],korean:['korean','韓'],thai:['thai','泰'],italian:['italian','pizza','義','披薩'],american:['american','hamburger','steak','美式','漢堡','牛排'],vietnamese:['vietnamese','越南'],indian:['indian','印度'],rice:['rice','飯','便當'],noodle:['noodle','ramen','麵'],soup:['soup','hot_pot','湯','鍋','粥'],snack:['小吃','餃','snack'],comfort:['湯','鍋','粥','noodle'],easy:['takeaway','便當','麵','小吃'],feast:['steak','燒肉','牛排'],adventure:['thai','indian','泰','印度'],spicy:['麻辣','辣'],sour:['酸'],light:['salad','沙拉','蒸'],strong:['咖哩','燒肉','滷']};
+function score(p){const h=[p.displayName,...(p.types||[])].join(' ').toLowerCase();let n=0;for(const [values,weight] of [[state.cuisine,6],[state.meal,4],[state.flavor,2],[[state.mood],1]])for(const v of values||[])if((words[v]||[]).some(w=>h.includes(w)))n+=weight;return n;}
+function showEmpty(title,detail){$('#result-panel').className='result-panel empty';$('#result-panel').innerHTML='<div class="empty-illustration"><img src="'+illustration+'" alt="餐廳店面插畫"></div><div class="empty-message"><h3>'+escapeHTML(title)+'</h3><p>'+escapeHTML(detail)+'</p></div>';}
+function pickOne(){
+ let list=state.fetched.filter(p=>!state.seen.has(p.id));if(!list.length){state.seen.clear();list=state.fetched;}
+ if(!list.length)return;const top=Math.max(...list.map(score));list=list.filter(p=>score(p)===top);const p=list[Math.floor(Math.random()*list.length)];state.seen.add(p.id);renderPlace(p);
+}
+function renderPlace(p){
+ const d=Math.round(p.distance);const dist=d<1000?d+' 公尺':(d/1000).toFixed(1)+' 公里';
+ $('#result-subtitle').textContent='附近找到 '+state.fetched.length+' 間餐廳；距離為直線估算';
+ $('#result-panel').className='result-panel';$('#result-panel').innerHTML=`<div class="result-visual"><img src="${illustration}" alt="通用店面插畫，非店家實拍"><span class="visual-caption">店面插畫・非實際照片</span></div><div class="result-content"><span class="result-kicker">TODAY'S SUGGESTION</span><h3 class="result-name">${escapeHTML(p.displayName)}</h3><div class="result-meta">距離約 ${dist} · 營業時間尚未確認</div><p class="result-details">${escapeHTML(p.formattedAddress||'地址未提供，請查看 Google 地圖')}</p><div class="result-note"><strong>為什麼推薦這間？</strong><p>位於所選搜尋範圍內${score(p)>0?'，店名或料理分類與部分偏好相符':'；這次先推薦附近的餐廳，偏好資料不足'}。</p></div><p class="result-disclaimer">價格、口味與營業時間請向店家確認。此測試版暫不載入評分、評論及照片。</p><div class="result-actions"><button class="button" id="next-btn">這間先不要，換一家 ↻</button><a class="button button-green" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.location.lat()+','+p.location.lng())}&destination_place_id=${encodeURIComponent(p.id)}&travelmode=walking">就吃這家！帶我去 ↗</a><a class="button" target="_blank" rel="noopener noreferrer" href="${mapURL(p.location.lat(),p.location.lng())}&query_place_id=${encodeURIComponent(p.id)}">在 Google 地圖查看 ↗</a></div><p class="result-details">餐廳資料來源：Google Maps</p></div>`;
+ $('#next-btn').addEventListener('click',()=>{pickOne();msg('已從本輪候選餐廳換一家，沒有重新搜尋');});$('#results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('#recommend-btn').addEventListener('click',async()=>{
+ if(!requireGoogle()||state.busy)return;if(!state.point){msg('請先定位、輸入地址或確認地圖選點');$('#location').scrollIntoView({behavior:'smooth'});return;}
+ const point={...state.point},radius=state.radius,version=state.version,key=point.lat+','+point.lng+'|'+radius;
+ if(state.queryKey===key&&Date.now()-state.queryAt<300000){pickOne();return;}
+ state.busy=true;$('#recommend-btn').disabled=true;msg('正在搜尋附近餐廳…');
+ try{
+  const {places}=await timeout(state.Place.searchNearby({fields:['id','displayName','location','formattedAddress','types','businessStatus'],locationRestriction:{center:{lat:point.lat,lng:point.lng},radius},includedPrimaryTypes:['restaurant'],maxResultCount:20,rankPreference:google.maps.places.SearchNearbyRankPreference.DISTANCE}),20000);
+  if(version!==state.version){msg('搜尋位置已變更，請重新按「今天吃這間」');return;}
+  state.fetched=(places||[]).filter(p=>p.location&&p.businessStatus!=='CLOSED_PERMANENTLY'&&p.businessStatus!=='CLOSED_TEMPORARILY').map(p=>{p.distance=distance(point,{lat:p.location.lat(),lng:p.location.lng()});return p;}).filter(p=>p.distance<=radius);
+  state.seen.clear();state.queryKey=key;state.queryAt=Date.now();
+  if(!state.fetched.length){state.queryKey='';showEmpty('附近暫時沒有可推薦的餐廳','請擴大到 2 公里或換個地點再試');msg('搜尋完成，這個範圍沒有餐廳結果');return;}
+  pickOne();msg('已找到真實餐廳，可按「換一家」繼續挑選');
+ }catch(e){state.queryKey='';showEmpty('餐廳搜尋暫時失敗','請確認 Places API (New)、計費及金鑰網站限制，或稍後再試');msg('搜尋未成功：'+String(e.message||'請求失敗').replace(/AIza[\w-]+/g,'[金鑰已隱藏]').slice(0,180));}
+ finally{state.busy=false;$('#recommend-btn').disabled=false;}
+});
+
+</script>
 </body>
 </html>
+
