@@ -63,13 +63,20 @@ html,body{max-width:100%;overflow-x:clip}
 }
 
 .test-settings{border:1px solid var(--line);padding:14px;margin:20px 0;font-size:12px}.test-settings summary{cursor:pointer;font-weight:700}.test-settings p{margin:8px 0}.test-settings input{font-size:14px}.map-crosshair{display:none}.result-visual img{object-fit:contain;height:auto}.result-details{overflow-wrap:anywhere}#inline-map{display:flex;align-items:center;justify-content:center}.location-map-footer span{max-width:100%} .result-actions a{text-align:center;text-decoration:none}
+/* Keep map gestures inside the map and prevent status text from shifting layout. */
+#inline-map{touch-action:none;overscroll-behavior:contain}
+.map-visual-header{min-width:0}
+#map-preview-status{display:block;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(min-width:561px){#map-preview-status{flex:1;text-align:right}}
+@media(max-width:560px){.map-visual-header{min-height:54px}#map-preview-status{width:100%;line-height:18px}}
+.result-visual{display:block;min-height:220px}.result-visual img{display:block;width:100%;height:290px;max-height:none;object-fit:cover}.result-visual img.is-illustration{object-fit:contain}.photo-attribution{font-size:11px;padding:8px 12px;background:var(--paper);overflow-wrap:anywhere}.photo-attribution a{color:var(--green)}.result-visual .visual-caption{position:static;display:block;margin:0;padding:5px 12px}.result-price{font-weight:700;font-size:14px}.source-note{font-size:11px;color:#56685d}.result-actions button:disabled{opacity:.5}.budget-layout label input[type=checkbox]{accent-color:var(--green);width:17px;height:17px;vertical-align:middle}.google-brand img{width:100px;height:auto;display:block}.google-brand{margin:8px 0}.retry-note{font-size:12px;color:var(--rust)}@media(max-width:560px){.result-visual{max-height:none}.result-visual img{height:230px;max-height:none}.result-visual .visual-caption{font-size:10px}}
 </style>
 
 
 </head>
 <body>
   <main class="page" id="top">
-    <details class="test-settings" open><summary>Google 連線設定 · 測試版</summary><p>輸入已限制網站來源的金鑰，僅在本頁記憶體使用，重新整理後清除。需啟用 Maps JavaScript API、Places API (New)、Geocoding API。</p><form id="google-form"><label for="google-key">網站 API 金鑰</label><div class="inline-input"><input id="google-key" type="password" autocomplete="off" spellcheck="false" required placeholder="貼入網站用金鑰"><button class="button button-green" type="submit">連接 Google</button></div></form><p id="google-status" role="status">尚未連線。請在允許的 GitHub Pages 網址上測試。</p></details><div class="masthead"><span>AN EVERYDAY FOOD JOURNAL</span><span>ISSUE NO. 001 <span class="masthead-mark" aria-hidden="true">✳</span></span></div>
+    <p id="google-status" class="status-line" role="status" aria-live="polite">正在載入 Google 地圖…</p><div class="masthead"><span>AN EVERYDAY FOOD JOURNAL</span><span>ISSUE NO. 001 <span class="masthead-mark" aria-hidden="true">✳</span></span></div>
     <header class="hero" aria-labelledby="brand-title">
       <div class="hero-copy">
         <p class="eyebrow">今天，不用想太多 <span aria-hidden="true">↘</span></p>
@@ -96,7 +103,7 @@ html,body{max-width:100%;overflow-x:clip}
             <div class="radius-group"><span class="small-label">搜尋範圍</span><div class="choice-row compact" role="group" aria-label="搜尋半徑"><button type="button" class="choice" data-radius="500">500 公尺</button><button type="button" class="choice selected" data-radius="1000" aria-pressed="true">1 公里</button><button type="button" class="choice" data-radius="2000">2 公里</button></div></div>
             <a id="location-google-link" class="button hidden" target="_blank" rel="noopener noreferrer">在 Google 地圖查看此位置 ↗</a><p id="location-status" class="status-line" aria-live="polite">尚未設定位置，請先選擇搜尋地點</p>
           </div>
-          <div class="location-map-wrap"><div class="map-visual-header"><span>LOCATION / 地圖選點</span><span id="map-preview-status">尚未設定位置・地圖中心僅供示意</span></div><div id="inline-map" role="region" aria-label="附近可拖曳地圖">先在上方連接 Google，即可顯示地圖</div><div class="map-crosshair" aria-hidden="true"><span></span></div><div class="location-map-footer"><span>拖曳或點擊地圖，再按「選取圖釘位置」確認</span><button type="button" class="button button-green" id="inline-select-btn">選取圖釘位置</button></div><p class="map-fallback hidden" id="map-fallback">Google 地圖未就緒，請檢查金鑰、API 啟用狀態、網站限制及計費設定</p></div>
+          <div class="location-map-wrap"><div class="map-visual-header"><span>LOCATION / 地圖選點</span><span id="map-preview-status">尚未設定位置・地圖中心僅供示意</span></div><div id="inline-map" role="region" aria-label="附近可拖曳地圖">正在載入地圖…</div><div class="map-crosshair" aria-hidden="true"><span></span></div><div class="location-map-footer"><span>地圖內單指拖曳選位置，地圖外滑動頁面；選好後按「選取圖釘位置」</span><button type="button" class="button button-green" id="inline-select-btn">選取圖釘位置</button></div><p class="map-fallback hidden" id="map-fallback">Google 地圖未就緒，請檢查金鑰、API 啟用狀態、網站限制及計費設定</p></div>
         </div>
       </div>
     </section>
@@ -104,129 +111,29 @@ html,body{max-width:100%;overflow-x:clip}
     <section class="section preference-section" id="preferences" aria-labelledby="preferences-title">
       <div class="section-number">02</div>
       <div class="section-body">
-        <div class="section-heading"><h2 id="preferences-title">今天想怎麼吃？</h2><p>選你在意的就好，其他可以跳過</p></div>
+        <div class="section-heading"><h2 id="preferences-title">今天想怎麼吃？</h2><p>料理、餐點優先符合；心情與口味作排序參考</p></div>
         <div class="preference-grid">
           <fieldset class="fieldset"><legend>現在什麼心情？<span>單選</span></legend><div class="choice-row" data-select="mood"><button type="button" class="choice" data-value="comfort">想被療癒</button><button type="button" class="choice" data-value="feast">想吃好料</button><button type="button" class="choice" data-value="adventure">想來點刺激</button><button type="button" class="choice" data-value="easy">簡單吃就好</button></div></fieldset>
-          <fieldset class="fieldset"><legend>想吃什麼口味？<span>可複選</span></legend><div class="choice-row" data-select="flavor" data-multiple="true"><button type="button" class="choice" data-value="strong">重口味</button><button type="button" class="choice" data-value="light">清淡</button><button type="button" class="choice" data-value="spicy">香辣</button><button type="button" class="choice" data-value="sour">酸辣</button></div></fieldset>
+          <fieldset class="fieldset"><legend>想吃什麼口味？<span>可複選</span></legend><div class="choice-row" data-select="flavor" data-multiple="true"><button type="button" class="choice" data-value="strong">濃郁下飯</button><button type="button" class="choice" data-value="light">清爽一點</button><button type="button" class="choice" data-value="spicy">想吃辣</button><button type="button" class="choice" data-value="sour">酸香開胃</button></div></fieldset>
           <fieldset class="fieldset"><legend>偏好哪種料理？<span>可複選</span></legend><div class="choice-row" data-select="cuisine" data-multiple="true"><button type="button" class="choice" data-value="chinese">台式／中式</button><button type="button" class="choice" data-value="japanese">日式</button><button type="button" class="choice" data-value="korean">韓式</button><button type="button" class="choice" data-value="thai">泰式</button><button type="button" class="choice" data-value="italian">義式</button><button type="button" class="choice" data-value="american">美式</button><button type="button" class="choice" data-value="vietnamese">越式</button><button type="button" class="choice" data-value="indian">印度</button></div></fieldset>
           <fieldset class="fieldset"><legend>偏好哪種餐點？<span>可複選</span></legend><div class="choice-row" data-select="meal" data-multiple="true"><button type="button" class="choice" data-value="rice">飯</button><button type="button" class="choice" data-value="noodle">麵</button><button type="button" class="choice" data-value="soup">湯／鍋物</button><button type="button" class="choice" data-value="snack">小吃</button></div></fieldset>
         </div>
       </div>
     </section>
 
-    <section class="section budget-section" aria-labelledby="budget-title"><div class="section-number">03</div><div class="section-body"><div class="section-heading"><h2 id="budget-title">今天想花多少？</h2><p>預算與用餐時間都能調整</p></div><div class="budget-layout"><fieldset class="fieldset"><legend>每人預算</legend><div class="choice-row" data-select="budget"><button type="button" class="choice selected" data-value="all" aria-pressed="true">不限</button><button type="button" class="choice" data-value="150">$150 以下</button><button type="button" class="choice" data-value="300">$150–300</button><button type="button" class="choice" data-value="500">$300–500</button><button type="button" class="choice" data-value="800">$500–800</button><button type="button" class="choice" data-value="high">$800 以上</button></div><p class="micro-note">此版先測試定位與附近推薦，暫不依預算篩選；價格未確認</p></fieldset><fieldset class="fieldset"><legend>用餐時間</legend><div class="choice-row" data-select="time"><button type="button" class="choice selected" data-value="now" aria-pressed="true">現在要吃</button><button type="button" class="choice" data-value="later">晚點再吃</button></div><label class="small-label hidden" for="meal-time" id="meal-time-label">預計用餐時間</label><input class="time-input hidden" type="datetime-local" id="meal-time"><p class="micro-note">此版暫不依用餐時間篩選，營業時間請到 Google 地圖確認</p></fieldset></div></div></section>
+    <section class="section budget-section" aria-labelledby="budget-title"><div class="section-number">03</div><div class="section-body"><div class="section-heading"><h2 id="budget-title">今天想花多少？</h2><p>每人預算上限 · 新台幣</p></div><div class="budget-layout"><fieldset class="fieldset"><legend>這餐最多想花多少？</legend><div class="choice-row" data-select="budget"><button type="button" class="choice selected" data-value="all" aria-pressed="true">不限</button><button type="button" class="choice" data-value="150">$150</button><button type="button" class="choice" data-value="300">$300</button><button type="button" class="choice" data-value="500">$500</button><button type="button" class="choice" data-value="800">$800</button><button type="button" class="choice" data-value="custom">自訂</button></div><label id="custom-budget-label" class="small-label hidden" for="custom-budget">輸入每人上限</label><input id="custom-budget" class="time-input hidden" type="number" min="1" max="100000" step="1" inputmode="numeric" placeholder="例如 1000"><p class="micro-note">優先使用 Google 提供的台幣價格區間；只顯示區間上限在預算內的店。價格不是實際帳單，點餐、低消與服務費另計。</p></fieldset><fieldset class="fieldset"><legend>價格資料不完整時</legend><label class="small-label"><input type="checkbox" id="allow-unknown"> 也推薦價格未確認的店家</label><p class="micro-note">未勾選時，缺少台幣金額或只有 $／$$ 級別的店家不會列入指定預算的推薦。不會自動提高預算。</p></fieldset></div></div></section>
 
     <div class="cta-wrap"><div class="cta-line"></div><button type="button" id="recommend-btn" class="primary-cta">今天吃這間 <span aria-hidden="true">↗</span></button><div class="cta-line"></div></div>
     <p id="app-message" class="app-message" role="status" aria-live="polite">先設定位置，再讓我們幫你找餐廳</p>
 
     <section class="section results-section" id="results" aria-labelledby="results-title"><div class="section-number">04</div><div class="section-body"><div class="section-heading"><h2 id="results-title">今日推薦</h2><p id="result-subtitle">還沒決定，等你按下開始</p></div><div id="result-panel" class="result-panel empty"><div class="empty-illustration"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDQwIj48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ0MCIgZmlsbD0iI2U1ZThkYiIvPjxwYXRoIGQ9Ik0wIDM3MGg2NDAiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTE1MCAxNDJoMzM4djIzMEgxNTB6IiBmaWxsPSIjZjRmMGU0IiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iOCIvPjxwYXRoIGQ9Ik0xMzYgMTQ1aDM2NmwtMTgtNjBIMTU3eiIgZmlsbD0iI2UyYjc1YiIgc3Ryb2tlPSIjMTUzZjM4IiBzdHJva2Utd2lkdGg9IjgiLz48cGF0aCBkPSJNMTM2IDE0NWMwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0NCAyMiA0NCAwIDAgMjIgNDQgMjIgNDQgMCAwIDIyIDQ0IDIyIDQ0IDAgMCAyMiA0MiAyMiA0MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxNTNmMzgiIHN0cm9rZS13aWR0aD0iNyIvPjxwYXRoIGQ9Ik0yMDAgMjEyaDExNXYxNjBIMjAwek0zNTAgMjEyaDkxdjkyaC05MXoiIGZpbGw9IiNkN2RkY2QiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI3Ii8+PHBhdGggZD0iTTI1MCAyMTJ2MTYwTTM1MCAyNTloOTEiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMjk2IiBjeT0iMjk1IiByPSI1IiBmaWxsPSIjMTUzZjM4Ii8+PHJlY3QgeD0iMjI3IiB5PSI1MyIgd2lkdGg9IjE5MiIgaGVpZ2h0PSI0MSIgcng9IjYiIGZpbGw9IiMxNTNmMzgiLz48cGF0aCBkPSJNNjUgMzY1VjIwNW0wIDU1Yy0zOS0zMy00MC02Ny0xOS04M20xOSA1M2M0Ny0yMyA2MC01OCAzNi05M002NSAzMDhjMzEtMjAgNTMtMjMgNjUtMTUiIHN0cm9rZT0iIzgwOWI3ZSIgc3Ryb2tlLXdpZHRoPSI4IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNTQ0IDM2NlYyMzltMCA0OGMtMTktMjctMjAtNTQtNi03MW02IDMzYzE5LTE3IDI1LTQwIDE1LTU5IiBzdHJva2U9IiM4MDliN2UiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg4IDQwNWg0NzUiIHN0cm9rZT0iIzE1M2YzOCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4K" alt="手繪餐廳店面插畫"></div><div class="empty-message"><span class="eyebrow">YOUR NEXT MEAL</span><h3>先看看今天有什麼選擇</h3><p>完成位置設定後，按「今天吃這間」就能開始</p></div></div></div></section>
-    <footer class="footer"><div><span>MADE FOR THE UNDECIDED</span><p>Google 連線測試版｜料理、心情與口味僅供排序參考</p></div><div><a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Google Maps</a><span>·</span><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GITHUB PAGES</a></div></footer>
+    <footer class="footer"><div><span>MADE FOR THE UNDECIDED</span><p>料理依類型篩選｜心情與口味依線索排序｜價格以店家為準</p></div><div><a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Google Maps</a><span>·</span><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GITHUB PAGES</a></div></footer>
+    <details class="source-note" style="margin-bottom:24px"><summary>使用說明與隱私</summary><p>推薦依地點、料理分類與偏好規則產生，餐價、口味與營業資訊請向店家確認。使用 Google 地圖服務須遵守 <a href="https://maps.google.com/help/terms_maps/">Google 地圖服務條款</a>。</p><p>僅在你按定位或送出地點時，將搜尋所需座標／地址交給 Google。地點、候選及偏好保留在本頁暫存記憶體，不寫入本站資料庫或瀏覽器儲存空間。地圖載入時 Google 亦會處理服務請求資訊，詳見 <a href="https://policies.google.com/privacy">Google 隱私權政策</a>。</p></details>
   </main>
 
-<script>
-'use strict';
-const $=s=>document.querySelector(s);
-const escapeHTML=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const state={ready:false,point:null,radius:1000,map:null,marker:null,geocoder:null,Place:null,busy:false,version:0,queryKey:'',fetched:[],seen:new Set(),mood:null,flavor:[],cuisine:[],meal:[]};
-const illustration=$('#result-panel img').getAttribute('src');
-const locMsg=t=>$('#location-status').textContent=t;
-const msg=t=>$('#app-message').textContent=t;
-const configMsg=t=>$('#google-status').textContent=t;
-const mapURL=(lat,lon)=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(lat+','+lon);
-const distance=(a,b)=>{const d=Math.PI/180,x=(b.lat-a.lat)*d,y=(b.lng-a.lng)*d,z=Math.sin(x/2)**2+Math.cos(a.lat*d)*Math.cos(b.lat*d)*Math.sin(y/2)**2;return 6371000*2*Math.asin(Math.min(1,Math.sqrt(z)));};
-function requireGoogle(){if(state.ready)return true;msg('請先在上方連接 Google 地圖');configMsg('請輸入金鑰並按「連接 Google」');$('.test-settings').open=true;return false;}
-window.gm_authFailure=()=>{state.ready=false;state.busy=false;$('#recommend-btn').disabled=false;configMsg('Google 驗證失敗：請確認網站限制、API 啟用狀態與計費帳戶。修正後重新整理。');$('#map-fallback').classList.remove('hidden');};
-function timeout(promise,ms=15000){return new Promise((resolve,reject)=>{const id=setTimeout(()=>reject(new Error('連線逾時，請稍後重試')),ms);Promise.resolve(promise).then(v=>{clearTimeout(id);resolve(v)},e=>{clearTimeout(id);reject(e)});});}
-window.initGoogleTest=async()=>{
- try{
-  const [{Map},{Geocoder},{Place},{AdvancedMarkerElement}]=await Promise.all([google.maps.importLibrary('maps'),google.maps.importLibrary('geocoding'),google.maps.importLibrary('places'),google.maps.importLibrary('marker')]);
-  state.geocoder=new Geocoder();state.Place=Place;
-  state.map=new Map($('#inline-map'),{center:state.point||{lat:25.033,lng:121.5654},zoom:15,mapId:'DEMO_MAP_ID',mapTypeControl:false,streetViewControl:false,fullscreenControl:true,clickableIcons:false,gestureHandling:'cooperative'});
-  state.marker=new AdvancedMarkerElement({map:state.map,position:state.point||{lat:25.033,lng:121.5654},title:'搜尋位置'});
-  state.map.addListener('center_changed',()=>{const c=state.map.getCenter();state.marker.position=c;$('#map-preview-status').textContent='候選位置：'+c.lat().toFixed(5)+', '+c.lng().toFixed(5)+'（按確認套用）';});
-  state.map.addListener('click',e=>state.map.panTo(e.latLng));
-  state.ready=true;$('#google-key').value='';configMsg('Google 元件已載入，請測試地址查詢及餐廳搜尋，確認服務授權。');$('#google-form button').disabled=true;
-  if(state.point)resolveAddress(state.point);msg('Google 已連接，請先設定位置');
- }catch(e){configMsg('Google 元件載入失敗，請檢查 API 設定並重新整理。');$('#map-fallback').classList.remove('hidden');}
-};
-$('#google-form').addEventListener('submit',e=>{
- e.preventDefault();const key=$('#google-key').value.trim();if(!key)return;
- if(location.protocol==='file:'){configMsg('請把此檔案上傳 GitHub Pages 後再連接；直接開啟檔案無法符合網站來源限制。');return;}
- const button=$('#google-form button');button.disabled=true;configMsg('正在載入 Google 地圖…');
- const script=document.createElement('script');script.async=true;script.src='https://maps.googleapis.com/maps/api/js?key='+encodeURIComponent(key)+'&loading=async&callback=initGoogleTest&v=weekly&language=zh-TW&region=TW';
- script.onerror=()=>{script.remove();button.disabled=false;configMsg('Google 程式載入失敗，請確認網路後重試');};document.head.appendChild(script);
-});
-function setPoint(lat,lng,label,reverse=true){
- if(!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>90||Math.abs(lng)>180){locMsg('座標無效');return;}
- const p={lat,lng,label};state.point=p;state.version++;state.queryKey='';state.fetched=[];state.seen.clear();
- locMsg('已設定：'+label+'（'+lat.toFixed(5)+', '+lng.toFixed(5)+'）');$('#map-preview-status').textContent=label;$('#address').value=reverse?'':label;
- const link=$('#location-google-link');link.href=mapURL(lat,lng);link.classList.remove('hidden');
- if(state.map){state.map.panTo(p);state.map.setZoom(16);state.marker.position=p;}
- $('#result-subtitle').textContent='位置已更新，請重新推薦';
- $('#result-panel').className='result-panel empty';$('#result-panel').innerHTML='<div class="empty-illustration"><img src="'+illustration+'" alt="餐廳店面插畫"></div><div class="empty-message"><h3>搜尋位置已設定</h3><p>按「今天吃這間」，尋找附近餐廳</p></div>';
- if(reverse&&state.ready)resolveAddress(p);
-}
-async function resolveAddress(p){
- locMsg('位置已取得，正在確認附近地址…');
- try{const {results}=await timeout(state.geocoder.geocode({location:{lat:p.lat,lng:p.lng}}));if(state.point!==p)return;if(!results.length)throw Error('無地址');p.label=results[0].formatted_address;$('#address').value=p.label;$('#map-preview-status').textContent=p.label;locMsg('所選位置附近地址：'+p.label);}
- catch(e){if(state.point===p)locMsg('座標已設定，但地址查詢失敗；仍可搜尋附近餐廳。請確認 Geocoding API 設定。');}
-}
-$('#locate-btn').addEventListener('click',()=>{
- if(!requireGoogle())return;if(!navigator.geolocation){locMsg('瀏覽器不支援定位，請輸入地址或地圖選點');return;}
- const button=$('#locate-btn');button.disabled=true;locMsg('正在定位，請允許瀏覽器使用位置');
- navigator.geolocation.getCurrentPosition(p=>{button.disabled=false;setPoint(p.coords.latitude,p.coords.longitude,'目前位置');},e=>{button.disabled=false;locMsg(e.code===1?'定位權限未開啟，請允許位置權限，或輸入地址／地圖選點':'無法取得位置，請輸入地址或地圖選點');},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
-});
-$('#address-form').addEventListener('submit',async e=>{
- e.preventDefault();if(!requireGoogle())return;const q=$('#address').value.trim();if(q.length<2)return;
- const c=q.match(/^(-?\d+(?:\.\d+)?)\s*[,，]\s*(-?\d+(?:\.\d+)?)$/);if(c){setPoint(Number(c[1]),Number(c[2]),'手動座標');return;}
- const button=$('#address-form button');button.disabled=true;const version=++state.version;locMsg('正在搜尋地址／地標…');
- try{const {results}=await timeout(state.geocoder.geocode({address:q,region:'TW'}));if(version!==state.version)return;if(!results.length)throw Error('找不到地點');const r=results[0];setPoint(r.geometry.location.lat(),r.geometry.location.lng(),r.formatted_address,false);}
- catch(e){if(version===state.version)locMsg('地址查詢失敗，請補上縣市、改用座標或地圖選點，並確認 Geocoding API 已啟用');}finally{button.disabled=false;}
-});
-$('#map-btn').addEventListener('click',()=>{if(requireGoogle()){$('#inline-map').scrollIntoView({behavior:'smooth',block:'center'});locMsg('拖曳或點擊地圖，再按「選取圖釘位置」');}});
-$('#inline-select-btn').addEventListener('click',()=>{if(!requireGoogle())return;const p=state.map.getCenter();setPoint(p.lat(),p.lng(),'地圖選點');});
-document.querySelectorAll('[data-radius]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-radius]').forEach(x=>{x.classList.remove('selected');x.setAttribute('aria-pressed','false');});b.classList.add('selected');b.setAttribute('aria-pressed','true');state.radius=Number(b.dataset.radius);state.queryKey='';state.version++;}));
-document.querySelectorAll('[data-select]').forEach(group=>{
- const key=group.dataset.select;
- group.querySelectorAll('button').forEach(b=>{
-  if(['budget','time'].includes(key)){b.disabled=true;return;}
-  b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{
-   if(group.dataset.multiple==='true'){b.classList.toggle('selected');state[key]=[...group.querySelectorAll('.selected')].map(x=>x.dataset.value);}
-   else{const off=b.classList.contains('selected');group.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));if(!off)b.classList.add('selected');state[key]=off?null:b.dataset.value;}
-   group.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.classList.contains('selected')?'true':'false'));
-  });
- });
-});
-const words={chinese:['chinese','taiwanese','中式','台式','便當','小吃'],japanese:['japanese','sushi','ramen','日式','壽司','拉麵'],korean:['korean','韓'],thai:['thai','泰'],italian:['italian','pizza','義','披薩'],american:['american','hamburger','steak','美式','漢堡','牛排'],vietnamese:['vietnamese','越南'],indian:['indian','印度'],rice:['rice','飯','便當'],noodle:['noodle','ramen','麵'],soup:['soup','hot_pot','湯','鍋','粥'],snack:['小吃','餃','snack'],comfort:['湯','鍋','粥','noodle'],easy:['takeaway','便當','麵','小吃'],feast:['steak','燒肉','牛排'],adventure:['thai','indian','泰','印度'],spicy:['麻辣','辣'],sour:['酸'],light:['salad','沙拉','蒸'],strong:['咖哩','燒肉','滷']};
-function score(p){const h=[p.displayName,...(p.types||[])].join(' ').toLowerCase();let n=0;for(const [values,weight] of [[state.cuisine,6],[state.meal,4],[state.flavor,2],[[state.mood],1]])for(const v of values||[])if((words[v]||[]).some(w=>h.includes(w)))n+=weight;return n;}
-function showEmpty(title,detail){$('#result-panel').className='result-panel empty';$('#result-panel').innerHTML='<div class="empty-illustration"><img src="'+illustration+'" alt="餐廳店面插畫"></div><div class="empty-message"><h3>'+escapeHTML(title)+'</h3><p>'+escapeHTML(detail)+'</p></div>';}
-function pickOne(){
- let list=state.fetched.filter(p=>!state.seen.has(p.id));if(!list.length){state.seen.clear();list=state.fetched;}
- if(!list.length)return;const top=Math.max(...list.map(score));list=list.filter(p=>score(p)===top);const p=list[Math.floor(Math.random()*list.length)];state.seen.add(p.id);renderPlace(p);
-}
-function renderPlace(p){
- const d=Math.round(p.distance);const dist=d<1000?d+' 公尺':(d/1000).toFixed(1)+' 公里';
- $('#result-subtitle').textContent='附近找到 '+state.fetched.length+' 間餐廳；距離為直線估算';
- $('#result-panel').className='result-panel';$('#result-panel').innerHTML=`<div class="result-visual"><img src="${illustration}" alt="通用店面插畫，非店家實拍"><span class="visual-caption">店面插畫・非實際照片</span></div><div class="result-content"><span class="result-kicker">TODAY'S SUGGESTION</span><h3 class="result-name">${escapeHTML(p.displayName)}</h3><div class="result-meta">距離約 ${dist} · 營業時間尚未確認</div><p class="result-details">${escapeHTML(p.formattedAddress||'地址未提供，請查看 Google 地圖')}</p><div class="result-note"><strong>為什麼推薦這間？</strong><p>位於所選搜尋範圍內${score(p)>0?'，店名或料理分類與部分偏好相符':'；這次先推薦附近的餐廳，偏好資料不足'}。</p></div><p class="result-disclaimer">價格、口味與營業時間請向店家確認。此測試版暫不載入評分、評論及照片。</p><div class="result-actions"><button class="button" id="next-btn">這間先不要，換一家 ↻</button><a class="button button-green" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.location.lat()+','+p.location.lng())}&destination_place_id=${encodeURIComponent(p.id)}&travelmode=walking">就吃這家！帶我去 ↗</a><a class="button" target="_blank" rel="noopener noreferrer" href="${mapURL(p.location.lat(),p.location.lng())}&query_place_id=${encodeURIComponent(p.id)}">在 Google 地圖查看 ↗</a></div><p class="result-details">餐廳資料來源：Google Maps</p></div>`;
- $('#next-btn').addEventListener('click',()=>{pickOne();msg('已從本輪候選餐廳換一家，沒有重新搜尋');});$('#results').scrollIntoView({behavior:'smooth',block:'start'});
-}
-$('#recommend-btn').addEventListener('click',async()=>{
- if(!requireGoogle()||state.busy)return;if(!state.point){msg('請先定位、輸入地址或確認地圖選點');$('#location').scrollIntoView({behavior:'smooth'});return;}
- const point={...state.point},radius=state.radius,version=state.version,key=point.lat+','+point.lng+'|'+radius;
- if(state.queryKey===key&&Date.now()-state.queryAt<300000){pickOne();return;}
- state.busy=true;$('#recommend-btn').disabled=true;msg('正在搜尋附近餐廳…');
- try{
-  const {places}=await timeout(state.Place.searchNearby({fields:['id','displayName','location','formattedAddress','types','businessStatus'],locationRestriction:{center:{lat:point.lat,lng:point.lng},radius},includedPrimaryTypes:['restaurant'],maxResultCount:20,rankPreference:google.maps.places.SearchNearbyRankPreference.DISTANCE}),20000);
-  if(version!==state.version){msg('搜尋位置已變更，請重新按「今天吃這間」');return;}
-  state.fetched=(places||[]).filter(p=>p.location&&p.businessStatus!=='CLOSED_PERMANENTLY'&&p.businessStatus!=='CLOSED_TEMPORARILY').map(p=>{p.distance=distance(point,{lat:p.location.lat(),lng:p.location.lng()});return p;}).filter(p=>p.distance<=radius);
-  state.seen.clear();state.queryKey=key;state.queryAt=Date.now();
-  if(!state.fetched.length){state.queryKey='';showEmpty('附近暫時沒有可推薦的餐廳','請擴大到 2 公里或換個地點再試');msg('搜尋完成，這個範圍沒有餐廳結果');return;}
-  pickOne();msg('已找到真實餐廳，可按「換一家」繼續挑選');
- }catch(e){state.queryKey='';showEmpty('餐廳搜尋暫時失敗','請確認 Places API (New)、計費及金鑰網站限制，或稍後再試');msg('搜尋未成功：'+String(e.message||'請求失敗').replace(/AIza[\w-]+/g,'[金鑰已隱藏]').slice(0,180));}
- finally{state.busy=false;$('#recommend-btn').disabled=false;}
-});
-
-</script>
+<script src="./config.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
+
 
